@@ -1,5 +1,7 @@
 # Hospital Appointment No-Show Analysis
 
+![Power BI Dashboard](outputs/dashboard.png)
+
 ## 📌 Project Overview
 This project analyzes a dataset of over 110,000 medical appointments in Brazil to determine the key factors that cause patients to miss their scheduled appointments (No-Shows). The goal of this analysis is to provide actionable insights to hospital administrators to improve attendance rates and optimize hospital operations.
 

@@ -30,9 +30,7 @@ def run_analysis():
     # Remove negative waiting days (erroneous data where appointment is before scheduled date)
     df = df[df['WaitingDays'] >= 0]
 
-    # Save as cleaned_appointments.csv
-    df.to_csv('../data/cleaned_appointments.csv', index=False)
-    print("Cleaned data saved to '../data/cleaned_appointments.csv'")
+
 
     print("\n2. ANALYZING DATA...")
     # Convert No_show to binary for easy mean calculation (1 for No, 0 for Yes wait, No means they DID show up, Yes means they DID NOT show up)
@@ -72,6 +70,10 @@ def run_analysis():
     insights.append("No-Show Rate by Day of Week:")
     for d, r in day_rate.items():
         insights.append(f"  - {d}: {r:.2f}%")
+
+    # Save as cleaned_appointments.csv (Moving this here so it includes No_show_binary and DayOfWeek!)
+    df.to_csv('../data/cleaned_appointments.csv', index=False)
+    print("Cleaned data saved to '../data/cleaned_appointments.csv'")
 
     # Save insights
     with open('../outputs/summary_insights.csv', 'w') as f:
